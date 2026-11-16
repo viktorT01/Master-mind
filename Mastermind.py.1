@@ -1,0 +1,44 @@
+import random
+
+print("Datorn kommer slumpa fram en kod på 4 siffror mellan 1-6.")
+print("Du ska försöka gissa denna kods siffror på max 12 drag")
+print("Efter respektive gissning så kommer du få en respons:")
+print("För varje gissad korrekt siffra på korrekt plats i koden: ✓")
+print("För varje gissad korrekt siffra på fel plats i koden: X")
+print("För de siffror som inte finns med i koden ges ingen markering.\n")
+
+print("Exemple: om de slumpade talen är 2315")
+print("och du gissar  3165")
+print("så blir responsen ✓XX \n")
+
+print("Du får välja mellan två svårighetsnivåer:")
+print("Lättare nivå: Alla siffror är garanterat olika")
+print("Svårare nivå: Det kan finnas upprepningar av en eller flera siffror\n")
+
+while True:
+    svar = input("\nVälj svårighetsnivå, lätt(1) eller  svår(2): ")
+    if svar == "1" or svar == "2":
+        break
+    else:
+        print("Ogiltigt val. Välj 1 eller 2.")
+kod = ""
+
+if svar == "1":
+    while len(kod) < 4:
+        siffra = str(random.randint(1,6))
+
+        if siffra not in kod:
+            kod += siffra
+else:
+    kodlist = [random.randint(1, 6) for i in range(4)]
+    kod = str(kodlist[0])+str(kodlist[1])+str(kodlist[2])+str(kodlist[3])
+
+print(kod)
+
+
+vinst = False
+
+    
+
+
+
